@@ -1,0 +1,51 @@
+# AI Interior Design Platform - Python Dependencies
+# This file contains all the packages needed to run the comprehensive room transformation system
+
+# Core AI and Computer Vision Libraries
+# These are the foundation packages that power our object detection and image segmentation
+torch>=1.13.0,<2.0.0          # PyTorch for deep learning models (SAM and other neural networks)
+torchvision>=0.14.0,<1.0.0    # Computer vision utilities and pre-trained models
+opencv-python>=4.7.0          # OpenCV for image processing and computer vision operations
+Pillow>=9.0.0                 # Python Imaging Library for image manipulation and enhancement
+
+# Object Detection and Segmentation Models
+# These packages provide the AI models for detecting and segmenting objects in rooms
+ultralytics>=8.0.0            # YOLOv8 for comprehensive object detection
+segment-anything>=1.0         # Facebook's Segment Anything Model for precise object masking
+
+# Cloud AI Services and API Integration
+# Replicate provides access to state-of-the-art image generation models
+replicate>=0.15.0             # Replicate API client for cloud-based AI model inference
+
+# Image Processing and Enhancement
+# Additional libraries for advanced image processing and quality improvements
+numpy>=1.21.0                 # Numerical computing foundation for image arrays
+scipy>=1.9.0                  # Scientific computing for advanced image processing algorithms
+
+# HTTP and File Handling
+# Essential utilities for downloading images and handling web requests
+requests>=2.28.0              # HTTP library for downloading generated images from URLs
+urllib3>=1.26.0               # Lower-level HTTP utilities (dependency of requests)
+
+# Development and Debugging Tools (Optional but Recommended)
+# These help with development, testing, and monitoring the system performance
+matplotlib>=3.5.0             # For visualizing detection results and masks during development
+tqdm>=4.64.0                  # Progress bars for long-running AI operations
+
+# Platform-Specific Requirements
+# Uncomment the appropriate section based on your deployment environment
+
+# For CUDA-enabled systems (recommended for production):
+# torch>=1.13.0+cu117 -f https://download.pytorch.org/whl/cu117/torch_stable.html
+# torchvision>=0.14.0+cu117 -f https://download.pytorch.org/whl/cu117/torch_stable.html
+
+# For CPU-only systems (development or resource-constrained environments):
+# torch>=1.13.0+cpu -f https://download.pytorch.org/whl/cpu/torch_stable.html
+# torchvision>=0.14.0+cpu -f https://download.pytorch.org/whl/cpu/torch_stable.html
+
+# Production Deployment Additions
+# Add these for production environments with specific needs
+# gunicorn>=20.1.0              # WSGI server for production web deployment
+# redis>=4.3.0                  # For caching and task queuing
+# celery>=5.2.0                 # For background task processing
+# psycopg2-binary>=2.9.0        # PostgreSQL adapter if using database storage
